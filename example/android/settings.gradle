@@ -1,0 +1,6 @@
+rootProject.name = 'ArcgisMapExample'
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'
+
+include ':reactnativearcgismap'
+project(':reactnativearcgismap').projectDir = new File(rootProject.projectDir, '../../android')
