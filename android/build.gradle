@@ -131,6 +131,9 @@ android {
 repositories {
   mavenCentral()
   google()
+  maven {
+            url 'https://esri.jfrog.io/artifactory/arcgis'
+        }
 
   def found = false
   def defaultDir = null
