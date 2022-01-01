@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { View, useWindowDimensions } from 'react-native';
-import { MapSdk, MapType, MapView } from 'react-native-arcgis-map';
+import { View, useWindowDimensions, TextInput } from 'react-native';
+import { MapSdk, MapType, ArcMapView } from 'react-native-arcgis-map';
 import { TabView, SceneMap } from 'react-native-tab-view';
 
 MapSdk.setApiKey(
@@ -15,14 +15,24 @@ const obj = {
 };
 
 const FirstRoute = () => (
-  <View style={{ flex: 1, backgroundColor: '#673ab7' }}>
-    <MapView
+  <View style={{ flex: 1, backgroundColor: 'pink' }}>
+    <ArcMapView
       style={{ flex: 1 }}
       onLoad={() => {
         console.log('Mapview onload success');
       }}
       mapType={MapType.ARCGIS_STREETS}
       initPosition={obj}
+    />
+    <TextInput
+      value="haha"
+      style={{
+        position: 'absolute',
+        top: 10,
+        width: 300,
+        borderWidth: 5,
+        left: 10,
+      }}
     />
   </View>
 );

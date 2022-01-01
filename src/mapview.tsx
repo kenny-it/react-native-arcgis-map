@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { requireNativeComponent, ViewProps } from 'react-native';
+import {
+  requireNativeComponent,
+  ViewProps,
+  // NativeSyntheticEvent,
+} from 'react-native';
 import type { MapType, LatLng } from './types';
 
 export interface MapViewProps extends ViewProps {
@@ -24,15 +28,20 @@ export interface MapViewProps extends ViewProps {
    */
   initPosition?: LatLng;
   /*
+   * Sets background color of the map.
+   * color - an Integer representing the color as 0xAARRGGBB, or null for no background color
+   */
+  backgroundColor?: number;
+  /*
    * invoked when map loading has completed.
    */
   onLoad?: () => void;
 }
 
-const name = 'MapView';
+const name = 'ArcMapView';
 const NativeMapView = requireNativeComponent<MapViewProps>(name);
 
-const MapView = (props: any) => {
+const ArcMapView = (props: any) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -55,4 +64,4 @@ const MapView = (props: any) => {
   );
 };
 
-export default MapView;
+export default ArcMapView;

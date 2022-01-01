@@ -1,6 +1,6 @@
-import * as MapSdk from './sdk'
-export * from './types'
+import * as MapSdk from './sdk';
+export * from './types';
 
-export{ default as MapView} from './mapview'
+export { default as ArcMapView } from './mapview';
 
-export { MapSdk}
+export { MapSdk };
